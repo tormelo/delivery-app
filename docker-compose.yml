@@ -1,0 +1,62 @@
+version: '3.9'
+services:
+  frontend:
+    container_name: delivery-app-front-end
+    build: ./front-end
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes: 
+      - ./front-end/src:/app/src
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      - ESLINT_NO_DEV_ERRORS=${ESLINT_NO_DEV_ERRORS}
+      - SKIP_PREFLIGHT_CHECK=${SKIP_PREFLIGHT_CHECK}
+      - REACT_APP_HOSTNAME=backend
+      - REACT_APP_BACKEND_PORT=${REACT_APP_BACKEND_PORT} 
+    # Os `healthcheck` devem garantir que a aplicação
+    # está operacional, antes de liberar o container
+    healthcheck:
+      test: ["CMD", "lsof", "-t", "-i:3000"]  # Caso utilize outra porta interna para o front, altere ela aqui também
+      timeout: 10s
+      retries: 5
+  backend:
+    container_name: delivery-app-back-end
+    build: ./back-end
+    ports:
+      - ${API_PORT}:${API_PORT}
+    working_dir: /app
+    # command: dev
+    volumes: 
+      - ./back-end/src:/app/src
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - API_PORT=${API_PORT}
+      - JWT_SECRET=${JWT_SECRET}
+      - MYSQL_HOST=db
+      - MYSQL_PORT=${MYSQL_PORT}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DB_NAME=${MYSQL_DB_NAME}
+      - EVAL_ALWAYS_RESTORE_DEV_DB=${EVAL_ALWAYS_RESTORE_DEV_DB}
+    healthcheck:
+      test: ["CMD", "lsof", "-t", "-i:${API_PORT}"]
+      timeout: 10s
+      retries: 5
+  db:
+    image: mysql:8.0.21
+    container_name: delivery-app-db
+    ports:
+      - ${MYSQL_PORT}:${MYSQL_PORT}
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
+    restart: 'always'
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"] # Deve aguardar o banco ficar operacional
+      timeout: 10s
+      retries: 5
