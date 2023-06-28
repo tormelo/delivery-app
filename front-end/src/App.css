@@ -58,93 +58,73 @@
   width: 400px;
 }
 
-/* --------------------página de produtos -------------------- */
-#body_cards {
+/* Products */
+.card-product {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 10px;
+  width: 300px;
+}
+
+.card-product img {
+  height: 250px;
+  margin: 1em;
+  width: min-content;
+}
+
+.card-product-price {
+  background-color: #f2fffc;
+  margin: 10px 0 0 10px;
+  padding: 0 10px;
+  position: absolute;
+  text-align: center;
+}
+
+.card-product-price h4 {
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.card-product-bottom {
+  background-color: #b1c2be;
+  width: 100%;
+}
+
+.card-product-bottom h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0.4em;
+}
+
+.card-product-btns {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
-  margin-left: 90px;
+  margin: 0.4em;
+  width: 150px;
+}
+
+.card-product-btns button {
+  width: 30px;
+}
+
+.card-product-btns input {
+  border-radius: 0;
+  text-align: center;
+  width: 5em;
+}
+
+.btn-checkout {
+  bottom: 30px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42px;
+  position: fixed;
+  right: 30px;
 }
 
 .cards_products {
   align-items: center;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   margin: 10px;
-}
-
-.price_title {
-  background-color: #f2fffc;
-  font-size: 30px;
-  margin-top: 10px;
-  text-align: center;
-  width: 150px;
-}
-
-.title_card {
-  color: black;
-  font-size: 20px;
-  font-weight: 300;
-  text-align: center;
-}
-
-.image_product {
-  height: 250px;
-  width: auto;
-}
-
-#button_decrescent {
-  border-radius: 20% 0% 0% 20%;
-}
-
-.button_sum {
-  background-color: #036b52;
-  border-radius: 0% 20% 20% 0%;
-  color: white;
-  font-size: 16px;
-  height: 38px;
-  width: 35px;
-}
-
-.card_footer {
-  align-items: center;
-  background-color: #eaf1ef;
-  height: 120px;
-  width: 270px;
-}
-
-.input_value_button {
-  height: 38px;
-  text-align: center;
-  width: 60px;
-}
-
-.card-body {
-  padding: 0;
-}
-
-.footer_container_products {
-  margin-left: 60px;
-}
-
-.card-body {
-  margin: 0;
-}
-
-#checkout {
-  background-color: #036b52;
-  border-radius: 10px;
-  color: #eaf1ef;
-  font-size: 30px;
-  left: 80%;
-  padding: 5px;
-  position: absolute;
-  position: fixed;
-  top: 90%;
-  width: 350px;
-}
-
-#span_checkout {
-  font-weight: bold;
 }
 
 .bg-pending {
