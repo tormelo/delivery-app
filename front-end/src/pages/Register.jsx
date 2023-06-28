@@ -1,7 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import DeliveryAppContext from '../context/DeliveryAppContext';
 import { requestPost } from '../services/requests';
 
@@ -45,15 +43,22 @@ export default function Register() {
   };
 
   return (
-    <section className="section">
-      <h2 id="title_registry">Cadastro</h2>
-      <Form
-        id="form_registry"
+    <section
+      className="d-flex flex-column justify-content-center align-items-center"
+      style={ { height: '100vh' } }
+    >
+      <h2 className="mb-4">Cadastro</h2>
+      <form
         onSubmit={ onRegisterSubmit }
+        className="card-login d-flex flex-column justify-content-evenly px-4"
       >
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label htmlFor="input-name">Nome</Form.Label>
-          <Form.Control
+        <label
+          htmlFor="input-name"
+          className="form-label"
+        >
+          Nome
+          <input
+            className="form-control"
             type="text"
             name="name"
             id="input-name"
@@ -62,11 +67,14 @@ export default function Register() {
             value={ registerForm.name }
             onChange={ handleChange }
           />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label htmlFor="input-email">Email</Form.Label>
-          <Form.Control
+        </label>
+        <label
+          htmlFor="input-email"
+          className="form-label"
+        >
+          Email
+          <input
+            className="form-control"
             type="email"
             name="email"
             id="input-email"
@@ -75,10 +83,14 @@ export default function Register() {
             value={ registerForm.email }
             onChange={ handleChange }
           />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Label htmlFor="input-email">Senha</Form.Label>
-          <Form.Control
+        </label>
+        <label
+          htmlFor="input-password"
+          className="form-label"
+        >
+          Senha
+          <input
+            className="form-control"
             type="password"
             name="password"
             id="input-password"
@@ -87,21 +99,20 @@ export default function Register() {
             value={ registerForm.password }
             onChange={ handleChange }
           />
-        </Form.Group>
-        <Button
-          id="btn_registry"
-          bsPrefix
+        </label>
+        <button
+          className="btn btn-primary"
           data-testid="common_register__button-register"
           type="submit"
           disabled={ isDisabled() }
         >
           CADASTRAR
-        </Button>
-      </Form>
+        </button>
+      </form>
       {
         failedRegister && (
           <span
-            id="span_registry"
+            className="mt-4"
             data-testid="common_register__element-invalid_register"
           >
             E-mail já cadastrado

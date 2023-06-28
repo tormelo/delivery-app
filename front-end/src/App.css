@@ -16,51 +16,6 @@
   width: 400px;
 }
 
-/* ----------------- tela de registro -------------------- */
-.section {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  justify-content: center;
-  width: 100vw;
-}
-
-#form_registry {
-  background: #eaf1ef;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  height: 337px;
-  padding: 20px;
-  width: 300px;
-}
-
-#btn_registry {
-  align-items: center;
-  background: #036b52;
-  border-radius: 10px;
-  color: #f2fffc;
-  font-family: Roboto;
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 400;
-  height: 40px;
-  line-height: 50%;
-  text-align: center;
-  width: 260px;
-}
-
-#title_registry {
-  position: absolute;
-  text-align: center;
-  top: 15%;
-}
-
-
-#span_registry {
-  position: absolute;
-  top: 74%;
-}
-
 /* --------------------página de produtos -------------------- */
 #nav_bar {
   box-sizing: border-box;
