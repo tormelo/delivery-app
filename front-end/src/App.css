@@ -6,80 +6,14 @@
   padding: 0;
 }
 
-/* ----------------- tela de login -------------------- */
-#form-login {
+/* Login and Register */
+.card-login {
   background: #eaf1ef;
   border: 1px solid #b1c2be;
-  bottom: 12.5%;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
-  height: 285px;
-  left: 39.06%;
-  position: absolute;
-  right: 38.8%;
-  top: 46.39%;
-  width: 320px;
-}
-
-#btn-login {
-  align-items: center;
-  background: #036b52;
-  border-radius: 10px;
-  color: #f2fffc;
-  font-family: Roboto;
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 400;
-  height: 30px;
-  line-height: 50%;
-  margin-left: 35px;
-  text-align: center;
-  width: 250px;
-}
-
-#btn-outline-green {
-  align-items: center;
-  background-color: white ! important;
-  border: 2px solid #036b52;
-  border-radius: 10px;
-  box-sizing: border-box;
-  color: #036b52;
-  font-family: Roboto;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  height: 30px;
-  line-height: 50%;
-  margin-left: 35px;
-  margin-top: 10px;
-  text-align: center;
-  width: 250px;
-}
-
-#main-login {
-  display: flex;
-}
-
-#buttons {
-  display: flex;
-  flex-direction: column;
-}
-
-.input_form_login {
-  height: 40px;
-  margin: auto;
-  width: 250px;
-}
-
-.label_form_login {
-  margin-left: 43px;
-  margin-top: 8px;
-}
-
-#spam_text {
-  margin-left: 100px;
-  position: absolute;
-  top: 92%;
+  height: 350px;
+  width: 400px;
 }
 
 /* ----------------- tela de registro -------------------- */

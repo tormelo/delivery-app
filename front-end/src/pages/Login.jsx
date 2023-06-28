@@ -1,8 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import DeliveryAppContext from '../context/DeliveryAppContext';
 import { requestPost } from '../services/requests';
 
@@ -50,21 +47,22 @@ export default function Login() {
   };
 
   return (
-    <section>
-      <Form id="form-login" onSubmit={ onLoginSubmit }>
-        <Form.Group
-          className="mb-3"
-          controlId="formBasicEmail"
+    <section
+      className="d-flex flex-column justify-content-center align-items-center"
+      style={ { height: '100vh' } }
+    >
+      <h2 className="mb-4">Delivery App</h2>
+      <form
+        onSubmit={ onLoginSubmit }
+        className="card-login d-flex flex-column justify-content-evenly px-4"
+      >
+        <label
+          htmlFor="input-email"
+          className="form-label"
         >
-          <Form.Label
-            className="label_form_login"
-            htmlFor="input-email"
-          >
-            Email address
-
-          </Form.Label>
-          <Form.Control
-            className="input_form_login"
+          Login
+          <input
+            className="form-control"
             type="email"
             name="email"
             id="input-email"
@@ -73,18 +71,14 @@ export default function Login() {
             value={ loginForm.email }
             onChange={ handleChange }
           />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label
-            className="label_form_login"
-            htmlFor="input-password"
-          >
-            Password
-
-          </Form.Label>
-          <Form.Control
-            className="input_form_login"
+        </label>
+        <label
+          htmlFor="input-password"
+          className="form-label"
+        >
+          Senha
+          <input
+            className="form-control"
             type="password"
             name="password"
             id="input-password"
@@ -93,38 +87,34 @@ export default function Login() {
             value={ loginForm.password }
             onChange={ handleChange }
           />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Button
-            id="btn-login"
-            tid="btn-login"
-            bsPrefix
-            data-testid="common_login__button-login"
-            type="submit"
-            disabled={ isDisabled() }
+        </label>
+        <button
+          className="btn btn-primary"
+          data-testid="common_login__button-login"
+          type="submit"
+          disabled={ isDisabled() }
+        >
+          LOGIN
+        </button>
+        <button
+          className="btn btn-outline-primary"
+          data-testid="common_login__button-register"
+          type="button"
+          onClick={ () => navigate('/register') }
+        >
+          Ainda não tenho conta
+        </button>
+      </form>
+      {
+        failedLogin && (
+          <span
+            className="mt-4"
+            data-testid="common_login__element-invalid-email"
           >
-            LOGIN
-          </Button>
-          <Button
-            id="btn-outline-green"
-            data-testid="common_login__button-register"
-            type="button"
-            onClick={ () => navigate('/register') }
-          >
-            Ainda não tenho conta
-          </Button>
-        </Form.Group>
-        {
-          failedLogin && (
-            <span
-              id="spam_text"
-              data-testid="common_login__element-invalid-email"
-            >
-              Usuário inválido
-            </span>
-          )
-        }
-      </Form>
+            Usuário inválido
+          </span>
+        )
+      }
     </section>
   );
 }

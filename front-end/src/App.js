@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Checkout from './pages/Checkout';
