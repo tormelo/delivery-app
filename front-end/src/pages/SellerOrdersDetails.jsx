@@ -10,7 +10,7 @@ function SellerOrdersDetails() {
       <section className="mt-4 d-flex flex-column align-items-center">
         <div>
           <h2 className="ms-2 align-self-start">Detalhe do pedido</h2>
-          <div className="cards_products">
+          <div className="card-default">
             <OrderDetailsHeader userRole="seller" />
             <OrderDetailsTable userRole="seller" />
           </div>

@@ -48,7 +48,7 @@ export default function AdminPageForm() {
       </h2>
       <form
         onSubmit={ onRegisterSubmit }
-        className="cards_products d-flex justify-content-evenly"
+        className="card-default align-items-center d-flex justify-content-evenly"
       >
         <label
           htmlFor="input-name"

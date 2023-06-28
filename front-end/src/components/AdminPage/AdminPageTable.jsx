@@ -17,7 +17,7 @@ export default function AdminPageTable() {
   return (
     <div
       style={ { width: '1200px' } }
-      className="cards_products d-flex flex-column"
+      className="card-default align-items-center d-flex flex-column"
     >
       <table
         style={ { width: '1150px' } }

@@ -41,7 +41,7 @@ export default function CheckoutForm({ finishOrder }) {
       </h2>
       <form
         onSubmit={ onFinishOrderSubmit }
-        className="cards_products d-flex flex-wrap justify-content-evenly"
+        className="card-default d-flex flex-wrap justify-content-evenly"
       >
         <label
           htmlFor="seller"
