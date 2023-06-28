@@ -6,6 +6,48 @@
   padding: 0;
 }
 
+/* NavBar */
+.nav-btn {
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nav-btn:hover {
+  opacity: 90%;
+}
+
+.nav-btn:active {
+  opacity: 70%;
+}
+
+.nav-btn-products {
+  background-color: #2fc18c;
+  color: black;
+  width: 300px;
+}
+
+.nav-btn-orders {
+  background-color: #036b52;
+  color: white;
+  flex-grow: 2;
+  padding-left: 50px;
+  text-align: left;
+}
+
+.nav-user-name {
+  background-color: #421981;
+  color: white;
+  font-size: 20px;
+  padding: 0 50px;
+}
+
+.nav-btn-logout {
+  background-color: #056cf9;
+  color: white;
+  flex-grow: 0.3;
+}
+
 /* Login and Register */
 .card-login {
   background: #eaf1ef;
@@ -17,54 +59,6 @@
 }
 
 /* --------------------página de produtos -------------------- */
-#nav_bar {
-  box-sizing: border-box;
-  display: flex;
-}
-
-#nav_button_products {
-  background-color: #2fc18c;
-  border: none;
-  color: black;
-  font-size: 20px;
-  font-weight: 700;
-  width: 300px;
-}
-
-
-#nav_button_orders {
-  background-color: #036b52;
-  border: none;
-  color: white;
-  flex-grow: 1;
-  font-size: larger;
-  font-size: 20px;
-  font-weight: 700;
-  padding-left: 50px;
-  text-align: inherit;
-  width: 700px;
-}
-
-#title_hero {
-  background-color: #421981;
-  color: white;
-  flex-grow: 1;
-  font-size: 20px;
-  height: 50px;
-  line-height: 50px;
-  margin-bottom: 0;
-  text-align: center;
-}
-
-.loggout {
-  background-color: #056cf9;
-  border: none;
-  color: white;
-  flex-grow: 0.3;
-  font-size: 20px;
-  font-weight: 700;
-}
-
 #body_cards {
   display: flex;
   flex-wrap: wrap;
